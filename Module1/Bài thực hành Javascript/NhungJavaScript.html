@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NhungJavaScript</title>
+    <script src="NhungJavaScript.js"></script>
+</head>
+<body>
+<!--Viết trực tiếp trong thẻ-->
+<button type="button" onclick="alert('Xin chào!');">Click Me!</button>
+<!--viết trong thẻ <script></script>-->
+<button type="button" onclick="showMessage();">Click Me!</button>
+<script>
+    function showMessage(){
+        alert('Xin chào!');
+    }
+</script>
+<!--Nhúng file .js-->
+<button type="button" onclick="showMessage();">Click Me!</button>
+<script src="NhungJavaScript.js">
+</script>
+</body>
+</html>
