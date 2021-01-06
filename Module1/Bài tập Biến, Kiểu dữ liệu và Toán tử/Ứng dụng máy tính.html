@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<form>
+    <h1>Caculator</h1>
+    <table width="300">
+        <tr>
+           <td>
+               <input type="text" id="sothunhat">
+           </td>
+           <td>
+               <input type="text" id="sothuhai">
+           </td>
+        </tr>
+    </table>
+    <table width="300">
+        <tr>
+            <th>
+                <button type="button"  onclick="cong()"> Addition(+) </button>
+            </th>
+            <th>
+                <button type="button" onclick="tru()"> Subtraction(-) </button>
+            </th>
+            <th>
+                <button type="button" onclick="nhan()">Multiplication(x)</button>
+            </th>
+            <th>
+                <button type="button" onclick="chia()"> Division(/) </button>
+            </th>
+        </tr>
+        <tr>
+            <th id="ketqua">
+            </th>
+        </tr>
+    </table>
+</form>
+</body>
+<script>
+    function cong() {
+        let a = document.getElementById("sothunhat").value;
+        let b = document.getElementById("sothuhai").value ;
+        let c = parseInt(a) + parseInt(b);
+        document.getElementById('ketqua').innerText="Result:"+ c;
+    }
+    function tru() {
+        let a = document.getElementById("sothunhat").value;
+        let b = document.getElementById("sothuhai").value ;
+        let c = parseInt(a) - parseInt(b);
+        document.getElementById('ketqua').innerText="Result:"+ c;
+    }
+    function nhan() {
+        let a = document.getElementById("sothunhat").value;
+        let b = document.getElementById("sothuhai").value ;
+        let c = parseInt(a) * parseInt(b);
+        document.getElementById('ketqua').innerText="Result:"+ c;
+    }
+    function chia() {
+        let a = document.getElementById("sothunhat").value;
+        let b = document.getElementById("sothuhai").value ;
+        let c = parseInt(a) / parseInt(b);
+        document.getElementById('ketqua').innerText="Result:"+ c;
+    }
+</script>
+</html>

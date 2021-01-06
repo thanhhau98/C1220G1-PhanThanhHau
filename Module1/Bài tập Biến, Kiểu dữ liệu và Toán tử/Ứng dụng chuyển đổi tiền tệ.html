@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<form>
+    <table align="center" width="800">
+        <tr>
+            <th>
+                Amount<br>
+                <input id="bandau" type="text" >
+            </th>
+            <th>
+                From Currency<br>
+                <select id="vndusd">
+                    <option>VND</option>
+                    <option>USD</option>
+                </select>
+            </th>
+            <th>
+                To Currency<br>
+                <select id="usdvnd">
+                    <option>USD</option>
+                    <option>VND</option>
+                </select>
+            </th>
+            <th>
+                <button type="button" onclick="Conver()">Conver</button>
+            </th>
+        </tr>
+        <tr>
+            <th id="ketqua">
+            </th>
+        </tr>
+    </table>
+</form>
+</body>
+<script>
+    function Conver() {
+        let a = document.getElementById("bandau").value;
+        let c = document.getElementById('vndusd').value;
+        let d = document.getElementById('usdvnd').value;
+        let b ;
+        if ((c =='VND') && (d=='USD'))
+        { b = parseInt(a) / 23000 ;}
+        if ((c =='USD') && (d=='VND'))
+        { b = parseInt(a) * 23000 ;}
+        document.getElementById('ketqua').innerText="Result:"+ b;
+    }
+</script>
+</html>
