@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    let soThuca= parseInt(prompt('Nhập số thực a ',''));
+    let sothucb= parseInt(prompt('Nhập số thực b ',''));
+    let soThucc= parseInt(prompt('Nhập số thực c ',''));
+    if ((soThuca>0)&&(sothucb>0)&&(soThucc>0)) {
+        if ((soThuca+sothucb>soThucc)&&(sothucb+soThucc>soThuca)&&(soThuca+soThucc>sothucb)) {
+            alert('3 số thực (a,b,c) nhập vào là 3 cạnh của một tam giác');
+        }else {
+            alert('3 số thực (a,b,c) nhập vào không phải là 3 cạnh của một tam giác');
+        }
+    }else {
+        alert('3 số thực (a,b,c) nhập vào không phải là 3 cạnh của một tam giác');
+    }
+</script>
+</body>
+</html>

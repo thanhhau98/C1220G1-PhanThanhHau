@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let diemKiemtra = parseInt(prompt('Nhập điểm kiểm tra ',''));
+    let diemGiuaky = parseInt(prompt('Nhập điểm giữa kỳ ',''));
+    let diemCuoiky = parseInt(prompt('Nhập điểm cuối kỳ ',''));
+    let diemTrungbinh = (diemCuoiky+diemGiuaky+diemKiemtra)/3;
+    if (diemTrungbinh>=8) {
+        alert('Học lực giỏi');
+    } else if (diemTrungbinh>=6.5) {
+        alert('Học lực khá');
+    } else if (diemTrungbinh>=5) {
+        alert('Học lực trung bình');
+    } else if (diemTrungbinh>=4.5) {
+        alert('Học lực yếu');
+    } else {
+        alert('Học lực kém');
+    }
+</script>
+</body>
+</html>

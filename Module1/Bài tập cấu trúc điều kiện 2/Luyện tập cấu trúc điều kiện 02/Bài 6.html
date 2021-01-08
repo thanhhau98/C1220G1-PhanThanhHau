@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6</title>
+</head>
+<body>
+<script>
+    let heSoa = parseInt(prompt('Nhập hệ số a',''));
+    let heSob = parseInt(prompt('Nhập hệ số b',''));
+    let nghiemx;
+    if (heSoa==0) {
+        if (heSob == 0) {
+            alert('Phương trình vô số nghiệm');
+        } else {
+            alert('Phương trình vô nghiệm');
+        }
+    } else {
+        nghiemx = -heSob / heSoa;
+        alert('Nghiệm của phương trình ' + nghiemx);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let heSoa = parseInt(prompt('Nhập hệ số a',''));
+    let heSob = parseInt(prompt('Nhập hệ số b',''));
+    let heSoc = parseInt(prompt('Nhập hệ số c',''));
+    let nghiemx1;
+    let nghiemx2;
+    if (heSoa==0) {
+        if (heSob==0) {
+            if (heSoc==0) {
+                alert('Phương trình vô số nghiệm');
+            } else {
+                alert('Phương trình vô nghiệm');
+            }
+        }else {
+            if (heSoc==0) {
+                alert('Phương trình có 1 nghiệm x= 0');
+            } else {
+                nghiemx1 = -heSoc/heSob;
+                alert('Phương trình có 1 nghiệm x= ' + nghiemx1 );
+            }
+        }
+    }else {
+        if (heSob==0) {
+            if (heSoc==0) {
+                alert('Phương trình có nghiệm kép x1 =x2 = 0');
+            } else {
+                let nghiemx3 = -heSoc/heSoa;
+                if (nghiemx3<0) {
+                    alert('Phương trình vô nghiệm');
+                } else {
+                    nghiemx1 = math.sqrt(nghiemx3);
+                    nghiemx2 = -math.sqrt(nghiemx3);
+                    alert('Phương trình có 2 nghiệm phân biệt x1= ' + nghiemx1 + 'x2= ' + nghiemx2 );
+                }
+            }
+        } else {
+            if (heSoc==0) {
+                nghiemx2 = -heSob/heSoa;
+                alert('Phương trình có 2 nghiệm phân biệt x1= 0 x2= '+ nghiemx2 );
+            } else {
+                let delta = heSob*heSob-4*heSoa*heSoc;
+                if (delta<0) {
+                    alert('Phương trình vô nghiệm');
+                } else if (delta==0) {
+                    nghiemx1 = -heSob/(2*heSoa);
+                    alert('Phương trình có nghiệm kép x1 = x2 = '+nghiemx1 );
+                }else {
+                    nghiemx1 = (-heSob+ math.sqrt(delta))/(2*heSoa);
+                    nghiemx2 = (-heSob- math.sqrt(delta))/(2*heSoa);
+                    alert('Phương trình có 2 nghiệm phân biệt x1= ' + nghiemx1 + 'x2= ' + nghiemx2);
+                }
+            }
+
+        }
+
+    }
+</script>
+</body>
+</html>
