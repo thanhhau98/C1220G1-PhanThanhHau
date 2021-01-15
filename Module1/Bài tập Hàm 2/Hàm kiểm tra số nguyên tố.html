@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function ktSNT(num) {
+        if (num<2){
+            return;
+        }
+        let check= true;
+        for (let j=2; j<=Math.sqrt(num);j++){
+            if (num%j==0){
+                check=false;
+                break;
+            }
+        }
+        if (check){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    let nhapSo = parseInt(prompt('Nhập số cần kiểm tra ',''));
+    let check =ktSNT(nhapSo);
+    if (check==true) {
+        alert(nhapSo +' là số nguyên tố');
+    } else {
+        alert(nhapSo +' không là số nguyên tố');
+    }
+</script>
+</body>
+</html>

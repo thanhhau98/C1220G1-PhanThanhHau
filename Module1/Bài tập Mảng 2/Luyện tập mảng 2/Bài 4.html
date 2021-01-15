@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let str = prompt('Nhập chuỗi ','');
+    let arr = Array.from(str);
+    let bienDem =0;
+    for (let i=0 ; i < arr.length ; i++) {
+        if (!isNaN(arr[i]) == true) {
+            bienDem++;
+        }
+    }
+    alert('Số kí tự số là '+bienDem);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let length = parseInt(prompt('Nhập kích thước mảng ',''));
+    let soNguyen = [];
+    let bienDem =0;
+    for (let i=0 ; i<length ;i++) {
+        soNguyen[i] = parseInt(prompt('Nhập kí tự cho mảng',''));
+        if (!isNaN(soNguyen[i])==true) {
+            bienDem++;
+        }
+    }
+    alert('Số kí tự số trong mảng là ' +bienDem);
+</script>
+</body>
+</html>

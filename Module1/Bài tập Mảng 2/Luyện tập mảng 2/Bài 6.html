@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let length = parseInt(prompt('Nhập kích thước mảng ',''));
+    let soNguyen = [];
+    for (let i=0 ; i<length ;i++) {
+        soNguyen[i] = (prompt('Nhập kí tự cho mảng',''));
+        if (soNguyen[i]=="-") {
+            soNguyen.splice(i,1,"_")
+        }
+    }
+    alert(soNguyen.join(''));
+</script>
+</body>
+</html>
