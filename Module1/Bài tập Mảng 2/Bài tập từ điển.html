@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập từ điển</title>
+</head>
+<body>
+<form>
+    <table border="1">
+        <tr>
+            <th>
+                Tiếng Anh
+            </th>
+            <th>
+                Tiếng Việt
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <input id="tuKhoa" type="text">
+            </td>
+            <td id="ketQua">
+            </td>
+        </tr>
+        <tr>
+            <th>
+            <button type="button" onclick="tuDien()">Tìm Kiếm</button>
+            </th>
+        </tr>
+    </table>
+</form>
+<script>
+    function tuDien() {
+        let tiengAnh = ["hello", 'mouse', 'keyboard'];
+        let tiengViet = ['xin chào','con chuột','bàn phím'];
+        let tuNhap = document.getElementById("tuKhoa").value;
+        for (let i = 0; i < 3; i++) {
+            console.log(tuNhap);
+            console.log(tiengAnh[i]);
+            console.log(tiengAnh[i]===tuNhap);
+            if(tuNhap === tiengAnh[i]) {
+                document.getElementById("ketQua").innerText = tiengViet[i];
+                break;
+            } else {
+                document.getElementById("ketQua").innerText= "Không tìm thấy";
+            }
+        }
+    }
+</script>
+</body>
+</html>

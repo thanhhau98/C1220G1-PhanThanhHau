@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 1</title>
 </head>
 <body>
-$END$
+<script>
+    let num = parseInt(prompt("Enter a number: "));
+    let total = 0;
+    alert(num);
+    while( num != -1 ) {
+        total += num;
+        num = parseInt(prompt("Enter a number: "));
+        alert(num);
+    }
+    alert(total);
+</script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let count =0;
+    let str = prompt('Nhập 1 chuỗi','');
+    let arr = Array.from(str);
+    for (let i=0; i<arr.length ; i++) {
+        if ( arr[i] == '-') {
+            count++;
+        }
+    }
+    alert('Có '+count+' số nguyên âm');
+</script>
+</body>
+</html>

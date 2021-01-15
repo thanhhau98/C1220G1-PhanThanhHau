@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let bienDem =0 ;
+    let soNguyen = [];
+    let index =0;
+    for (let i=0 ; i<10 ;i++) {
+        soNguyen[i] = parseInt(prompt('Nhập số nguyên',''));
+        if (soNguyen[i]>bienDem) {
+            bienDem = soNguyen[i];
+            index = i;
+        }
+    }
+    alert('Phần tử có giá trị lớn nhất trong mảng là '+ bienDem + ' vị trí của phần tử đó là ' + index );
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let length = parseInt(prompt('Nhập độ dài mảng ',''));
+    let giatriTB ;
+    let bienDemTB =0;
+    let bienDem =0 ;
+    let soNguyen = [];
+    for (let i=0 ; i<length ;i++) {
+        soNguyen[i] = parseInt(prompt('Nhập số nguyên',''));
+        bienDemTB += soNguyen[i];
+        if (soNguyen[i]>bienDem) {
+            bienDem = soNguyen[i];
+        }
+    }
+    giatriTB = bienDemTB/soNguyen.length;
+    alert('Phần tử có giá trị lớn nhất trong mảng là '+ bienDem + ' giá trị trung bình của các phần tử trong mảng ' + giatriTB );
+</script>
+</body>
+</html>

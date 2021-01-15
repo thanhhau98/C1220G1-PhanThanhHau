@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 4</title>
 </head>
 <body>
-$END$
+<script>
+    let so2=1;
+    let tong =0;
+    let bienDem =0;
+    while (bienDem <9) {
+        tong += so2 ;
+        if (tong%5==0) {
+            alert(tong);
+            break;
+        }
+        so2 += tong ;
+        if (so2%5==0) {
+            alert(so2);
+            break;
+        }
+        bienDem ++ ;
+    }
+</script>
 </body>
 </html>

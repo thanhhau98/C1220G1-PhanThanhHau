@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    let soNguyen = [];
+    for (let i=0 ; i<10 ;i++) {
+        soNguyen[i] = parseInt(prompt('Nhập số nguyên', ''));
+    }
+    soNguyen.sort(function (a,b) {
+        return b-a;
+    })
+    alert(soNguyen);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+let soNguyen = [];
+let soNguyenV = parseInt(prompt('Nhập số nguyên V',''));
+for (let i=0 ; i<10 ;i++) {
+    soNguyen[i] = parseInt(prompt('Nhập số nguyên', ''));
+    if (soNguyen[i] == soNguyenV) {
+        soNguyen.splice(i, 1);
+        while (i<soNguyen.length) {
+            soNguyen[i]=soNguyen[i+1];
+        }
+    }
+}
+soNguyen[soNguyen.length]=0;
+alert(soNguyen);
+</script>
+</body>
+</html>
