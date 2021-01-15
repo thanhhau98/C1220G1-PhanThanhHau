@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let star = prompt('Nhập tên ngôi sao','');
+    let starName = ['Polaris','Aldebaran','Deneb','Vega','Altair','Dubhe','Regulus'];
+    let chomSao =['Ursa','Minor','Taurus','Cygnus','Lyra','Aquila','Ursa','Major','Leo'];
+    let check = false ;
+    function checkStar(star) {
+        for (let i = 0; i < starName.length; i++) {
+            if (star === starName[i]) {
+                check=true;
+                break;
+            }
+        }
+        if (check) {
+            alert ( star +' thuộc chòm sao '+ chomSao[i] );
+        }else {
+            alert(star +' không thuộc chòm sao con người biết');
+        }
+    }
+    checkStar(star);
+</script>
+</body>
+</html>

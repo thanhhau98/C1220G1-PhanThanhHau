@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<form>
+    <p>
+        <label>Meter</label>
+        <input id="inputmeter" type="number" placeholder="meter"
+               oninput="meterToFoot(this.value)"
+               onchange="meterToFoot(this.value)">
+    </p>
+    <p>Celsius: <span id="outputFoot"></span></p>
+    <p>
+        <label>Foot</label>
+        <input id="inputFoot" type="number" placeholder="Foot"
+               oninput="footToMeter(this.value)"
+               onchange="footToMeter(this.value)">
+    </p>
+    <p>Celsius: <span id="outputMeter"></span></p>
+    <script>
+        function footToMeter(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputMeter").innerHTML = valNum*3.279 ;
+        }
+        function meterToFoot(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputFoot").innerHTML = valNum* 0.305 ;
+        }
+    </script>
+</form>
+</body>
+</html>
