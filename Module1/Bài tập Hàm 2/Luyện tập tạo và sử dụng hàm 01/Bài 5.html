@@ -10,8 +10,10 @@
     let starName = ['Polaris','Aldebaran','Deneb','Vega','Altair','Dubhe','Regulus'];
     let chomSao =['Ursa','Minor','Taurus','Cygnus','Lyra','Aquila','Ursa','Major','Leo'];
     let check = false ;
+    let i;
     function checkStar(star) {
-        for (let i = 0; i < starName.length; i++) {
+        console.log(star);
+        for ( i = 0; i < starName.length; i++) {
             if (star === starName[i]) {
                 check=true;
                 break;
