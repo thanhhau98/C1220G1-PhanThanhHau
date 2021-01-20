@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    function Rectangle(height, width) {
+        this.height = height;
+        this.width = width;
+        this.getArea = function () {
+            return height * width;
+        };
+        this.getCircuit = function () {
+            return (height * width) * 2;
+        };
+        this.setHeight = function (height) {
+            this.height = height;
+        };
+        this.setWidth = function (width) {
+            this.width = width;
+        };
+
+    }
+
+    let rectangle = new Rectangle(100, 50);
+
+    function creatRectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.beginPath();
+        ctx.rect(20, 20, rectangle.height, rectangle.width);
+        ctx.fill();
+    }
+    rectangle.setHeight(200);
+    rectangle.setWidth(150);
+    creatRectangle();
+    let area = rectangle.getArea();
+    let circuit = rectangle.getCircuit();
+    alert('Diện tích : ' + area + '\n' + 'Chu vi : ' + circuit);
+</script>
+</body>
+</html>

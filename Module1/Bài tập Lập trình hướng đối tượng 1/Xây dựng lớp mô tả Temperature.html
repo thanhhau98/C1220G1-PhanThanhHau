@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celsius) {
+            this.celsius =celsius;
+        }
+        getKelvin() {
+                return 273.15 + this.celsius;
+            }
+        getFahrenheit() {
+                return (this.celsius * 1.8) + 32;
+            }
+    }
+    let teamperature = new Temperature(25);
+    let kelvin = teamperature.getKelvin();
+    let fahrenheit = teamperature.getFahrenheit();
+    alert( kelvin+ ' K'+'\n' +fahrenheit+ ' F');
+</script>
+</body>
+</html>
