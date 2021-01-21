@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    function doiCho(soNguyen1,soNguyen2) {
+        let bienPhu = soNguyen1;
+        soNguyen1 = soNguyen2;
+        soNguyen2= bienPhu;
+        return  soNguyen1+","+soNguyen2 ;
+    }
+    let result=doiCho(3,4);
+    alert(result);
+</script>
+</body>
+</html>

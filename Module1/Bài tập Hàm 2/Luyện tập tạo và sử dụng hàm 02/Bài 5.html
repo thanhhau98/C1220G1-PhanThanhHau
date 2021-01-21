@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    function checkMin(soNguyen1,soNguyen2,soNguyen3) {
+        let min = soNguyen1;
+        if (soNguyen2<min && soNguyen3< min){
+            if (soNguyen2<soNguyen3){
+                min = soNguyen2;
+            } else {
+                min = soNguyen3;
+            }
+        }
+        return min;
+    }
+    let result = checkMin(5,8,10)   ;
+    alert(result);
+</script>
+</body>
+</html>

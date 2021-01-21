@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    // function daoMang(nhapMang) {
+    //     nhapMang.reverse();
+    //     return nhapMang
+    // }
+    let result = daoMang(nhapMang=[1,2,3,4,5,6,7,8]);
+    alert(result);
+    function daoMang(nhapMang) {
+        let i = 0;
+        let j = nhapMang.length;
+        while (i<j){
+            let bienPhu = nhapMang[i];
+            nhapMang[i]=nhapMang[j];
+            nhapMang[j]=bienPhu;
+            i++;
+            j--;
+        }
+        return nhapMang.join(" ");
+    }
+
+</script>
+</body>
+</html>
