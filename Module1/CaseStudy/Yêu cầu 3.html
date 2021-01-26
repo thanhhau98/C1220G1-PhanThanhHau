@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 3</title>
+</head>
+<body>
+<script>
+    let check= false;
+    let stepName='';
+    let name = prompt('Enter Name Customer:'+'');
+    name=name.trim().toLocaleLowerCase();
+    for (let i=0 ; i<name.length;i++){
+        if (name.charAt(i)===' '&&name.charAt(i+1)===' '){
+            continue;
+        }
+        if (i===0|| name.charAt(i-1)===' '){
+            stepName+=name.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        stepName+=name.charAt(i);
+    }
+    name=stepName;
+    let idCard;
+    do {
+        idCard = prompt('Enter ID Card Customer:');
+        if (!isNaN(idCard)){
+            idCard =Number.parseFloat(idCard);
+        }
+        if (!Number.isInteger(idCard)){
+            alert('Id Card is incorrect');
+            continue;
+        }
+        if (idCard<100000000||idCard>999999999){
+            alert('Id Card is incorrect' );
+            continue;
+        }
+        check=true;
+    } while (!check);
+    check=false;
+    let birthday ;
+    do {
+        birthday = prompt('Enter Birdthday Customer (dd/MM/YY):'+'');
+        if (birthday.charAt(2)==='/'&&birthday.charAt(5)==='/'){
+            let day=birthday.substring(0,2);
+            let month=birthday.substring(3,5);
+            let year=birthday.substring(6,10);
+            if (!isNaN(day)&&!isNaN(month)&&!isNaN(year)){
+                parseFloat(day);
+                parseFloat(month);
+                parseFloat(year);
+                if (0<day<32&&0<month<13&&year>1950){
+                    check=true;
+                }
+            }
+        }
+        if (!check){
+            alert('Birthday is incorrect');
+        }
+    }while (!check);
+    check=false;
+    let email;
+    do {
+        let countAt =0;
+        let countPoin=0;
+        email = prompt('Enter Email Customer:'+'');
+        for (let i=0 ; i< email.length;i++){
+            if (email.charAt(i)==='@'){
+                countAt++;
+                for (let j=i+1; j<email.length;j++){
+                    if (email.charAt(j)==='.'){
+                        countPoin++;
+                    }
+                }
+            }
+        }
+        if (countAt!=1 || countPoin<1){
+            alert("Email is  incorrect");
+        }else {
+            check=true;
+        }
+    } while (!check);
+    check=false;
+    let address = prompt('Enter Address Customer:'+'');
+    let type = prompt('Enter Type Customer:'+'');
+    let discount = prompt('Enter Discount:'+'');
+    let numberofaccompanying ;
+    do {
+        numberofaccompanying = prompt('Enter Number Of Accompanying:');
+        if (!isNaN(numberofaccompanying)){
+            numberofaccompanying=Number.parseFloat(numberofaccompanying);
+            if (Number.isInteger(numberofaccompanying)){
+                check=true;
+            }
+        }
+        if (!check){
+            alert('Number Of Accompanying is  incorrect');
+        }
+    }while (!check);
+    check=false;
+    let typeRoom = prompt('Enter Type Room:'+'');
+    let rentdays;
+    do {
+        rentdays=prompt('Enter Rent Days:'+'');
+        if (!isNaN(rentdays)){
+            rentdays=Number.parseFloat(rentdays);
+            if (Number.isInteger(rentdays)){
+                check=true;
+            }
+        }
+        if (!check){
+            alert('Rentday is  incorrect');
+        }
+    }while (!check);
+    let typeService = prompt('Enter Type Service:'+'');
+    alert('Information Of Customer: \n'+' Name: '+name+'\n Id Card: '+idCard+'\n Birthday: '+birthday+'\n Email: '+email+'\n Address: '+address+'\n Type: '+type+'\n Discount: '+discount+'\n Number Of Accompanying : '+numberofaccompanying+'\n Type Room: '+typeRoom+'\n Rent Days: '+rentdays+'\n Type Service: '+ typeService)
+</script>
+</body>
+</html>

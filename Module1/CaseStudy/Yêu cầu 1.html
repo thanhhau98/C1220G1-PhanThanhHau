@@ -6,67 +6,19 @@
 </head>
 <body>
 <script>
-    class SwitchButton {
-        constructor(status) {
-            this.status = status;
-        }
-        connectToLamp(Electriclamp){
-            if (this.switchOn()) {
-                Electriclamp.turnOn();
-            }else {
-                Electriclamp.turnOff();
-            }
-        }
-        switchOn(){
-            if (this.status){
-                return this.status = true ;
-                alert("Bật công tắc");
-            } else {
-                return this.status = true ;
-                alert("Bật công tắc");
-            }
-        }
-        switchOff() {
-            if (this.status){
-                return this.status = false;
-                alert("Đóng công tắc");
-            } else {
-                return this.status = false ;
-                alert("Đóng công tắc");
-            }
-        }
-    }
-    class ElectricLamp {
-        constructor(status) {
-            this.status = status;
-        }
-        turnOff(){
-            if (this.status){
-                return this.status = false ;
-                alert("Đèn tắt");
-            } else {
-                return this.status = false ;
-                alert("Đèn tắt");
-            }
-        }
-        turnOn(){
-            if (this.status){
-                return this.status = true ;
-                alert("Đèn sáng");
-            } else {
-                return this.status = true ;
-                alert("Đèn sáng");
-            }
-        }
-    }
-    let switchButton = new SwitchButton(false);
-    let electricLamp = new ElectricLamp(false);
-    for (let i=0 ;i<10 ;i++) {
-        switchButton.switchOn();
-        switchButton.connectToLamp(electricLamp);
-        switchButton.switchOff();
-        switchButton.connectToLamp(electricLamp);
-    }
+    let name = prompt('Enter Name Customer:'+'');
+    let idCard = prompt('Enter ID Card Customer:'+'');
+    let birthday = prompt('Enter Birdthday Customer (dd/MM/YY):'+'');
+    let email = prompt('Enter Email Customer:'+'');
+    let address = prompt('Enter Address Customer:'+'');
+    let type = prompt('Enter Type Customer:'+'');
+    let discount = prompt('Enter Discount:'+'');
+    let numberofaccompanying = prompt('Enter Number Of Accompanying:'+'');
+    let typeRoom = prompt('Enter Type Room:'+'');
+    let rentdays=prompt('Enter Rent Days:'+'');
+    let typeService = prompt('Enter Type Service:'+'');
+    let totalPays = 500*rentdays*(1-discount/100);
+    alert('Information Of Customer:\n'+' Name: '+name+'\n Id Card: '+idCard+'\n Birthday: '+birthday+'\n Email: '+email+'\n Address: '+address+'\n Type: '+type+'\n Discount: '+discount+'\n Number Of Accompanying : '+numberofaccompanying+'\n Type Room: '+typeRoom+'\n Rent Days: '+rentdays+'\n Type Service: '+ typeService+'\n Total Pays: '+totalPays)
 </script>
 </body>
 </html>

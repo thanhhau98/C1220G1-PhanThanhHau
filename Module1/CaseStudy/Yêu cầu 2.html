@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 2</title>
+</head>
+<body>
+<script>
+    let name = 'Phan Thành Hậu';
+    let idCard = '206138361';
+    let birthday = '10/02/1998';
+    let email = 'th010498@gmail.com';
+    let address = 'Đà Nẵng';
+    let type = 'Diamond';
+    let discount = 10;
+    let numberofaccompanying = 2;
+    let typeRoom = 'Vip';
+    let rentdays= 10;
+    let typeService ='Villa';
+    let moneyPerDays=0;
+    let total = 0;
+    let menu=prompt('1.Show Information Customer'+'\n2.Edit Information Customer'+'\n3.Show the amount to be paid after discount'+'');
+    parseInt(menu);
+    if(menu!=1&&menu!=2&&menu!=3) {
+        alert('Failed!!!');
+    }
+    if (menu==1) {
+        alert('Information Of Customer: \n'+' Name: '+name+'\n Id Card: '+idCard+'\n Birthday: '+birthday+'\n Email: '+email+'\n Address: '+address+'\n Type: '+type+'\n Discount: '+discount+'\nNumber Of Accompanying : '+numberofaccompanying+'\n Type Room: '+typeRoom+'\n Rent Days: '+rentdays+'\n Type Service: '+ typeService);
+        menu=prompt('1.Show Information Customer'+'\n2.Edit Information Customer'+'\n3.Show the amount to be paid after discount'+'');
+    }
+    if (menu==2){
+        let chance = prompt(' 1.Name: '+name+'\n 2.Id Card: '+idCard+'\n 3.Birthday: '+birthday+'\n 4.Email: '+email+'\n 5.Address: '+address+'\n 6.Type: '+type+'\n 7.Discount: '+discount+'\n 8.Number Of Accompanying : '+numberofaccompanying+'\n 9.Type Room: '+typeRoom+'\n 10.Rent Days: '+rentdays+'\n 11.Type Service: '+ typeService+'');
+        if (chance==1){
+            name=prompt('Enter Name You Want Edit:'+'');
+        }
+        if (chance==2){
+            idCard=prompt('Enter Id card You Want Edit:'+'');
+        }
+        if (chance==3){
+            birthday=prompt('Enter Birthday You Want Edit:'+'');
+        }
+        if (chance==4){
+            email=prompt('Enter Email You Want Edit:'+'');
+        }
+        if (chance==5){
+            address=prompt('Enter Address You Want Edit:'+'');
+        }
+        if (chance==6){
+            type=prompt('Enter type You Want Edit:'+'');
+        }
+        if (chance==7){
+            discount=prompt('Enter Discount You Want Edit:'+'');
+        }
+        if (chance==8){
+           numberofaccompanying=prompt('Enter Number Of Companying You Want Edit:'+'');
+        }
+        if (chance==9){
+            typeRoom=prompt('Enter Type Room You Want Edit:'+'');
+        }
+        if (chance==10){
+            rentdays=prompt('Enter Rent Days You Want Edit:'+'');
+        }
+        if (chance==11){
+            typeService=prompt('Enter Type Sevice You Want Edit:'+'');
+        }
+        alert('Information Of Customer: \n'+' Name: '+name+'\n Id Card: '+idCard+'\n Birthday: '+birthday+'\n Email: '+email+'\n Address: '+address+'\n Type: '+type+'\n Discount: '+discount+'\nNumber Of Accompanying : '+numberofaccompanying+'\n Type Room: '+typeRoom+'\n Rent Days: '+rentdays+'\n Type Service: '+ typeService);
+        menu=prompt('1.Show Information Customer'+'\n2.Edit Information Customer'+'\n3.Show the amount to be paid after discount'+'');
+    }
+    if (menu==3){
+        let discount1=0;
+        let discount2=0;
+        let discount3=0;
+        if (typeService=='Villa'){
+            moneyPerDays=500;
+        }
+        if (typeService=='House'){
+            moneyPerDays=300;
+        }
+        if (typeService=='Room'){
+            moneyPerDays=100;
+        }
+        if (address=='Đà Nẵng') {
+            discount1=20;
+        }
+        if (address=='Huế') {
+            discount1=10;
+        }
+        if (address=='Quảng Nam') {
+            discount1=5;
+        }
+        if (rentdays>7) {
+            discount2=30;
+        }else {
+            if (rentdays>=5) {
+                discount2=20;
+            }else {
+                if (rentdays>=2) {
+                    discount2=10;
+                }
+            }
+        }
+        if (type=='Diamond') {
+            discount3=15;
+        }
+        if (type=='Platium') {
+            discount3=10;
+        }
+        if (type=='Gold') {
+            discount3=5;
+        }
+        if (type=='Silver') {
+            discount3=2;
+        }
+        if (type=='Member') {
+            discount3=0;
+        }
+        total=moneyPerDays*rentdays*(1-discount/100)-discount3-discount2-discount1;
+        alert('Total Pays After Discount Condition: '+total);
+        menu=prompt('1.Show Information Customer'+'\n2.Edit Information Customer'+'\n3.Show the amount to be paid after discount'+'');
+    }
+</script>
+</body>
+</html>
