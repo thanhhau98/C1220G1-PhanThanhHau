@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Nhập số phẩn tử n'));
+    while (n>20){
+        n= parseInt(prompt('n quá lớn vui lòng nhập lại'));
+    }
+    alert('n thỏa điều diện đề bài');
+    let mangSoNguyen = [];
+    for (let i=0 ; i<n;i++) {
+        mangSoNguyen[i] = parseInt(prompt('Nhập phẩn tử thứ '+(i+1),''));
+    }
+    let mangBoi=[];
+    for (let i=0;i<mangSoNguyen.length;i++){
+        if (mangSoNguyen[i]%3==0 && mangSoNguyen[i]%5==0){
+           mangBoi.push(mangSoNguyen[i]);
+        }
+    }
+    let sum = 0;
+    for (let j=0 ; j<mangBoi.length;j++){
+        sum+=mangBoi[j];
+    }
+    alert('Tổng các số là bội của 3 và 5 là '+sum);
+</script>
+</body>
+</html>

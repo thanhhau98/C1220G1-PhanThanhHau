@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4</title>
+</head>
+<body>
+<script>
+    class KhachHang {
+        constructor(maKhachHang,tenKhachHang,soDienThoai,diaChi,email) {
+            this.maKhachHang=maKhachHang;
+            this.tenKhachHang=tenKhachHang;
+            this.soDienThoai=soDienThoai;
+            this.diaChi=diaChi;
+            this.email=email;
+        }
+        getInfo(){
+            return '1.Mã: '+this.maKhachHang+'\n'+
+                '2.Tên: '+this.tenKhachHang+'\n'+
+                '3.SĐT: '+this.soDienThoai+'\n'+
+                '4.Địa Chỉ: '+this.diaChi+'\n'+
+                '5.Email: '+this.email+'\n';
+        }
+        getMaKhachHang(){
+            return this.maKhachHang;
+        }
+        getTenKhachHang(){
+            return this.tenKhachHang;
+        }
+        getSoDienThoai(){
+            return this.soDienThoai;
+        }
+        getDiaChi(){
+            return this.diaChi;
+        }
+        getEmail(){
+            return this.email;
+        }
+        setMaKhachHang(maKhachHang){
+             this.maKhachHang=maKhachHang;
+        }
+        getTenKhachHang(tenKhachHang){
+             this.tenKhachHang=tenKhachHang;
+        }
+        getSoDienThoai(soDienThoai){
+             this.soDienThoai=soDienThoai;
+        }
+        getDiaChi(diaChi){
+             this.diaChi=diaChi;
+        }
+        getEmail(email){
+             this.email=email;
+        }
+    }
+    let danhSachKhachHang = [];
+    chonChucNang();
+    function chonChucNang() {
+        let chonChucNang1 = prompt('1. Thêm khách hàng \n'+
+                                    '2. Hiển thị khách hàng' );
+        chonChucNang1 = parseInt(chonChucNang1);
+        switch (chonChucNang1) {
+            case 1:
+                themKhachHang();
+                break;
+            case 2:
+                hienThikhachHang();
+                break;
+            default:
+                chonChucNang();
+                break;
+        }
+    }
+    function themKhachHang() {
+        let nhapMa = prompt('Nhập mã khách hàng');
+        let nhapTen = prompt("Nhập tên khách hàng");
+        let nhapSDT = prompt('Nhập số điện thoại khách hàng');
+        let nhapDiaChi = prompt('Nhập địa chỉ khách hàng');
+        let nhapEmail = prompt('Nhập emai khách hàng');
+        let khachHang = new KhachHang(nhapMa,nhapTen,nhapSDT,nhapDiaChi,nhapEmail);
+        danhSachKhachHang.push(khachHang);
+        chonChucNang();
+    }
+    function hienThikhachHang() {
+        let viTri=prompt('Nhập số thứ tự khách hàng bạn muốn hiển thị');
+        let hienThi= danhSachKhachHang[viTri-1].getInfo();
+        alert(hienThi);
+        chonChucNang();
+    }
+</script>
+</body>
+</html>

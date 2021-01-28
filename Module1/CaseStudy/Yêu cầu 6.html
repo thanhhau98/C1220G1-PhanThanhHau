@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 6</title>
+</head>
+<body>
+<script>
+    class Customner {
+        constructor(name,idCard,birthday,email,address ,type ,discount,numberOfAccompanying,typeRoom,rentdays,typeService) {
+            this.name = name;
+            this.idCard = idCard;
+            this.birthday=birthday;
+            this.emai=email;
+            this.address=address;
+            this.type =type;
+            this.discount = discount;
+            this.numberOfAccompanying =numberOfAccompanying;
+            this.typeroom=typeRoom;
+            this.rentdays=rentdays;
+            this.typeService =typeService;
+        }
+        getName(){
+            return this.name;
+        }
+        getIdCard(){
+            return this.idCard;
+        }
+        getBithday(){
+            return this.bithday;
+        }
+        getEmail(){
+            return this.emai;
+        }
+        getAddress(){
+            return this.address;
+        }
+        getType(){
+            return this.type;
+        }
+        getDiscount(){
+            return this.discount;
+        }
+        getNumberOfAccompanying (){
+            return this.numberOfAccompanying;
+        }
+        getTypeRoom (){
+            return this.typeroom;
+        }
+        getRentdays(){
+            return this.rentdays;
+        }
+        getTypeService(){
+            return this.typeService;
+        }
+        getInfo(){
+            let info ='1. Name: '+this.name +'\n' +
+                '2. Id Card: '+this.idCard +'\n' +
+                '3. birthday: '+this.birthday +'\n' +
+                '4. emai: '+this.emai +'\n' +
+                '5. address: '+this.address +'\n' +
+                '6. type: '+this.type +'\n' +
+                '7. discount: '+this.discount +'\n' +
+                '8. numberOfAccompanying: '+this.numberOfAccompanying +'\n' +
+                '9. typeroom: '+this.typeroom +'\n' +
+                '10. Rentdays: '+this.rentdays +'\n' +
+                '11. typeService: '+this.typeService +'\n';
+            return  info
+        }
+        setName(name){
+             this.name=name;
+        }
+        setIdCard(idCard){
+             this.idCard=idCard;
+        }
+        setBithday(bithday){
+            this.bithday=bithday;
+        }
+        setEmail(emai){
+             this.emai=emai;
+        }
+        setAddress(address){
+             this.address=address;
+        }
+        setType(type){
+             this.type=type;
+        }
+        setDiscount(discount){
+             this.discount=discount;
+        }
+        setNumberOfAccompanying (numberOfAccompanying){
+             this.numberOfAccompanying=numberOfAccompanying;
+        }
+        setTypeRoom (typeroom){
+             this.typeroom=typeroom;
+        }
+        setRentdays(rentdays){
+            this.rentdays=rentdays;
+        }
+        setTypeService(typeService){
+            this.typeService=typeService;
+        }
+        totalPays(){
+            return totalPays = 500*this.rentdays*(1-this.discount/100);
+        }
+    }
+    class Employee {
+        constructor(name , birthday, idCard, phone, email, level, workPosition, salary) {
+            this.name = name;
+            this.idCard = idCard;
+            this.bithday=birthday;
+            this.email=email;
+            this.phone=phone;
+            this.level =level;
+            this.workPosition =workPosition;
+            this.salary =salary;
+        }
+        getName(){
+            return this.name;
+        }
+        getIdCard(){
+            return this.idCard;
+        }
+        getBithday(){
+            return this.bithday;
+        }
+        getEmail(){
+            return this.email;
+        }
+        getPhone(){
+            return this.phone;
+        }
+        getLevel(){
+            return this.level;
+        }
+        getWorkPosition(){
+            return this.workPosition;
+        }
+        getSalary(){
+            return this.salary;
+        }
+        setName(name){
+            this.name=name;
+        }
+        setIdCard(idCard){
+            this.idCard=idCard;
+        }
+        setBithday(bithday){
+            this.bithday=bithday;
+        }
+        setEmail(email){
+            this.email=email;
+        }
+        setPhone(phone){
+            this.phone=phone;
+        }
+        setLevel(level){
+            this.level=level;
+        }
+        setWorkPosition(workPosition){
+            this.workPosition=workPosition;
+        }
+        setSalary (salary){
+            this.salary=salary;
+        }
+    }
+    let arrListCustomers = [];
+    displayMainMenu();
+    function displayMainMenu() {
+        let menu = prompt('1. Add New Customer. \n' +
+            '2. Display Information Customer.\n' +
+            '3. Display total pay of customer \n'+
+            '4. Edit Information Customer.\n' +
+            '5. Delete Customer.\n' +
+            '6. Exit.\n');
+        menu = parseInt(menu);
+        switch (menu) {
+            case 1 :
+                addNewCustomer();
+                break;
+            case 2 :
+                displayCustomers();
+                break;
+            case 3 :
+                editCustomer();
+                break;
+            case 4 :
+                deleteCustomer();
+                break;
+            case 5 :    
+            case 6 :
+                alert('Good Bye');
+                break;
+            default :
+                alert('Number is invalid');
+                displayMainMenu();
+        }
+    }
+    function addNewCustomer() {
+        let check = false;
+        let stepName = '';
+        let name =  prompt('Enter Name Customer:' + '');
+        name = name.trim().toLocaleLowerCase();
+        for (let i = 0; i < name.length; i++) {
+            if (name.charAt(i) === ' ' && name.charAt(i + 1) === ' ') {
+                continue;
+            }
+            if (i === 0 || name.charAt(i - 1) === ' ') {
+                stepName += name.charAt(i).toLocaleUpperCase();
+                continue;
+            }
+            stepName += name.charAt(i);
+        }
+        name = stepName;
+        let idCard;
+        do {
+            idCard = prompt('Enter ID Card Customer:');
+            if (!isNaN(idCard)) {
+                idCard = Number.parseFloat(idCard);
+            }
+            if (!Number.isInteger(idCard)) {
+                alert('Id Card is incorrect');
+                continue;
+            }
+            if (idCard < 100000000 || idCard > 999999999) {
+                alert('Id Card is incorrect');
+                continue;
+            }
+            check = true;
+        } while (!check);
+        check = false;
+        let birthday;
+        do {
+            birthday = prompt('Enter Birdthday Customer (dd/MM/YY):' + '');
+            if (birthday.charAt(2) === '/' && birthday.charAt(5) === '/') {
+                let day = birthday.substring(0, 2);
+                let month = birthday.substring(3, 5);
+                let year = birthday.substring(6, 10);
+                if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                    parseFloat(day);
+                    parseFloat(month);
+                    parseFloat(year);
+                    if (0 < day < 32 && 0 < month < 13 && year > 1950) {
+                        check = true;
+                    }
+                }
+            }
+            if (!check) {
+                alert('Birthday is incorrect');
+            }
+        } while (!check);
+        check = false;
+        let email;
+        do {
+            let countAt = 0;
+            let countPoin = 0;
+            email = prompt('Enter Email Customer:' + '');
+            for (let i = 0; i < email.length; i++) {
+                if (email.charAt(i) === '@') {
+                    countAt++;
+                    for (let j = i + 1; j < email.length; j++) {
+                        if (email.charAt(j) === '.') {
+                            countPoin++;
+                        }
+                    }
+                }
+            }
+            if (countAt != 1 || countPoin < 1) {
+                alert("Email is  incorrect");
+            } else {
+                check = true;
+            }
+        } while (!check);
+        check = false;
+        let address = prompt('Enter Address Customer:' + '');
+        let type = prompt('Enter Type Customer:' + '');
+        let discount = prompt('Enter Discount:' + '');
+        let numberofaccompanying;
+        do {
+            numberofaccompanying = prompt('Enter Number Of Accompanying:');
+            if (!isNaN(numberofaccompanying)) {
+                numberofaccompanying = Number.parseFloat(numberofaccompanying);
+                if (Number.isInteger(numberofaccompanying)) {
+                    check = true;
+                }
+            }
+            if (!check) {
+                alert('Number Of Accompanying is  incorrect');
+            }
+        } while (!check);
+        check = false;
+        let typeRoom = prompt('Enter Type Room:' + '');
+        let rentdays;
+        do {
+            rentdays = prompt('Enter Rent Days:' + '');
+            if (!isNaN(rentdays)) {
+                rentdays = Number.parseFloat(rentdays);
+                if (Number.isInteger(rentdays)) {
+                    check = true;
+                }
+            }
+            if (!check) {
+                alert('Rentday is  incorrect');
+            }
+        } while (!check);
+        let typeService = prompt('Enter Type Service:' + '');
+        let customer = new Customner (name, idCard, birthday, email, address, type, discount, numberofaccompanying, typeRoom, rentdays, typeService);
+        arrListCustomers.push(customer);
+        displayMainMenu();
+    }
+
+    function displayCustomers() {
+        let str1 = '';
+        let str2 = '';
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            str1 += (i + 1) + ' Name: ' + arrListCustomers[i].getName() + ' . ID: ' + arrListCustomers[i].getIdCard() +'\n';
+        }
+        if (arrListCustomers.length == 0) {
+            alert('Nhập thêm customer');
+            addNewCustomer();
+        } else {
+            let num1 = prompt(str1 + ' Choose customer you want display:');
+               str2= arrListCustomers[num1].getInfo();
+            alert(str2);
+            displayMainMenu();
+        }
+    }
+
+    function editCustomer() {
+        str3 = '';
+        str4 = '';
+        for (let t = 0; t < arrListCustomers.length; t++) {
+            str3 += (t + 1) + '. ' + arrListCustomers[t][0] + '\n';
+        }
+        let edit = prompt(str3 + ' Choose customer you want edit');
+        for (let o = 0; o < arrListCustomers[edit - 1].length; o++) {
+            str4 += (o + 1) + '.' + arrListCustomers[edit - 1][o] + '\n';
+        }
+        let numEdit = prompt(str4 + 'Choose number you want edit :');
+        numEdit = parseInt(numEdit);
+        for (let i = 0; i < arrListCustomers[edit - 1].length; i++)
+            switch (numEdit) {
+                case (i + 1) :
+                    arrListCustomers[edit - 1][i] = prompt('Enter info to change:');
+                    break;
+            }
+        displayCustomers();
+        displayMainMenu();
+    }
+    function deleteCustomer() {
+        let str5='';
+        for (let t = 0; t < arrListCustomers.length; t++) {
+            str5 += (t + 1) + '. ' + arrListCustomers[t][0] + '\n';
+        }
+        let del = prompt(str5 + ' Choose customer you want delete');
+        arrListCustomers.splice(del-1,1);
+        displayCustomers();
+        displayMainMenu();
+    }
+    function displayTotalPayOfCustomer () {
+    }
+</script>
+</body>
+</html>

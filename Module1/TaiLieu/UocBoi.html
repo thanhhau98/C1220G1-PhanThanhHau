@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getTotalX(a, b) {
+        let maxa = a[0];
+        let minb = b[0];
+        let count = 0;
+        let checka = true;
+        let checkb = true;
+        for(let i=1 ; i< a.length;i++){
+            if(maxa<a[i]){
+                maxa=a[i];
+            }
+        }
+        for (let j = 1;j<b.length;j++){
+            if(minb>b[j]){
+                minb=b[j];
+            }
+        }
+        for (let k=maxa ; k<=minb ;k++){
+            checka=true;
+            for(let n=0 ; n< a.length;n++){
+                if(k%a[n]!=0){
+                    checka = false;
+                }
+            }
+            checkb=true;
+            for(let m=0 ; m< b.length;m++){
+                if(b[m]%k!=0){
+                    checkb = false ;
+                }
+            }
+            if(checka&&checkb){
+                count++;
+            }
+
+        }
+        return count;
+        // Write your code here
+
+    }
+</script>
+</body>
+</html>

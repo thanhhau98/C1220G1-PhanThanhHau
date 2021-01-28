@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+<script>
+    let nhapDiem= parseInt(prompt('Nhập điểm'));
+    while (nhapDiem<0|| nhapDiem>100){
+        nhapDiem= parseInt(prompt('Điểm nhập không thỏa điều kiện\n Vui lòng nhập lại'));
+    }
+    let diemLamTron = lamTronDiem(nhapDiem);
+    if (nhapDiem>44) {
+        alert('Điểm sau khi làm tròn ' + diemLamTron);
+    }else {
+     alert('Bạn đã bị loại');
+    }
+    function lamTronDiem(diem) {
+        if (diem>44) {
+            if (diem % 5 == 4) {
+                diem += 1;
+            }
+            if (diem % 5 == 3) {
+                diem += 2;
+            }
+        }
+        return diem
+    }
+</script>
+</body>
+</html>

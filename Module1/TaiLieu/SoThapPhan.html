@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function plusMinus(arr) {
+        let count1 =0;
+        let count2 =0;
+        let count3 =0;
+        for(let i=0;i< arr.length ; i++){
+            if( arr[i]>0){
+                count1+=1;
+            }
+            if(arr[i]<0){
+                count2+=1;
+            }
+            if(arr[i]==0){
+                count3+=1;
+            }
+        }
+        let positive = count1/arr.length;
+        let negative = count2/arr.length;
+        let zeros = count3/arr.length;
+        let newarr =[];
+        newarr.push(Number.parseFloat(positive).toFixed(6),Number.parseFloat(negative).toFixed(6),Number.parseFloat(zeros).toFixed(6))
+        for (let i = 0; i < newarr.length; i++) {
+            console.log(newarr[i]);
+        }
+    }
+</script>
+</body>
+</html>

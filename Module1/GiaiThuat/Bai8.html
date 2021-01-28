@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai8</title>
+</head>
+<body>
+<script>
+    let nhapA=parseInt(prompt('Nhập số a '));
+    let nhapB=parseInt(prompt('Nhập số b '));
+    let phuA=nhapA;
+    let phuB=nhapB;
+    let uCLN;
+    let bCNN;
+        while (nhapB!=nhapA){
+            if (nhapA>nhapB){
+                nhapA=nhapA-nhapB;
+            }else {
+                nhapB=nhapB-nhapA
+            }
+            uCLN=nhapA;
+        }
+        bCNN=phuA*phuB/uCLN;
+        alert('Ước chung lớn nhất là '+uCLN+'\n'+
+                'Bội chung nhỏ nhất là '+bCNN);
+</script>
+</body>
+</html>

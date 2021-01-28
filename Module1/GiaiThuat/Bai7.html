@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai7</title>
+</head>
+<body>
+<script>
+    let nhapN=prompt('Nhập số nguyên N ');
+    let tongS = 0;
+    let tichP =1;
+    for (let i=0;i<nhapN.length ; i++){
+       tongS+= parseInt(nhapN.charAt(i));
+       tichP=tichP*parseInt(nhapN.charAt(i));
+    }
+    alert('Tổng các chữ số S= '+tongS+'\n'+
+          'Tích các chữ số P= ' +tichP);
+</script>
+</body>
+</html>

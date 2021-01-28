@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<script>
+    let i = parseInt(prompt('Nhập k '));
+    let n = parseInt(prompt('Nhập số phẩn tử n'));
+    let soNguyen = [];
+    while (n>50){
+        n= parseInt(prompt('n quá lớn vui lòng nhập lại'));
+    }
+    for (let i=0 ; i<n;i++) {
+        soNguyen[i] = parseInt(prompt('Nhập phẩn tử thứ '+(i+1),''));
+   }
+    let str = '';
+    for (let j=0 ; j<soNguyen.length;j++){
+        for (let k=j+1 ; k<soNguyen.length;k++){
+            if ((soNguyen[j]+soNguyen[k])%i==0){
+                str+='('+soNguyen[j]+','+soNguyen[k]+')'+'\n';
+            }
+        }
+    }
+    alert('Số cặp số thỏa yêu cầu là \n'+str);
+</script>
+</body>
+</html>

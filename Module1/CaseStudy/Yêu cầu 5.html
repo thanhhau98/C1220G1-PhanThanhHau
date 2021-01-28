@@ -33,6 +33,7 @@
                 break;
             default :
                 alert('Number is invalid');
+                displayMainMenu();
         }
     }
         function addNewCustomer() {
@@ -175,7 +176,7 @@
             }
             let edit = prompt(str3 + ' Choose customer you want edit');
             for (let o = 0; o < arrListCustomers[edit - 1].length; o++) {
-                str4 += (o + 1) + '.' + arrListCustomers[edit - 1][o] + '\n';
+                str4 += (o + 1) + '.' + arrListCustomers[edit - 1][o]+ '\n';
             }
             let numEdit = prompt(str4 + 'Choose number you want edit :');
             numEdit = parseInt(numEdit);

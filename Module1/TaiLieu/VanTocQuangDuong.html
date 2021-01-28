@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kangaroo(x1, v1, x2, v2) {
+        let result = '';
+        if(x1>x2){
+            if(v1>v2){
+                result+="NO";
+            } else {
+                if((x2-x1)%(v1-v2)==0){
+                    result+="YES";
+                } else{
+                    result+="NO";
+                }
+            }
+        }else{
+            if(v2>v1){
+                result+="NO";
+            } else {
+                if((x1-x2)%(v2-v1)==0){
+                    result+="YES";
+                } else{
+                    result+="NO";
+                }
+            }
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

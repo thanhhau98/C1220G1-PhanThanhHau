@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function gradingStudents(grades) {
+        for(let i=0 ; i< grades.length ; i++ ){
+            if(grades[i]>=38){
+                if(grades[i]%10==3||grades[i]%10==8){
+                    grades[i]=grades[i]+2;
+                }
+                if(grades[i]%10==4||grades[i]%10==9){
+                    grades[i]=grades[i]+1;
+                }
+            }
+        }
+        return grades;
+        // Write your code here
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BaiA</title>
+</head>
+<body>
+<script>
+    let nhapChuoi = prompt('Nhập chuỗi kí tự ');
+    let doiMang=nhapChuoi.split('');
+    let bienPhu;
+    let i=0;
+    let j=doiMang.length;
+    while (i<j){
+        bienPhu = doiMang[i];
+        doiMang[i]=doiMang[j];
+        doiMang[j]=bienPhu;
+        i++;
+        j--;
+    }
+    let chuoiMoi=doiMang.join('').toString();
+    alert(chuoiMoi);
+</script>
+</body>
+</html>

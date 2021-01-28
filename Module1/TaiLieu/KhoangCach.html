@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function countApplesAndOranges(s, t, a, b, apples, oranges) {
+        let countA=0;
+        let countO=0;
+        let kcA = [];
+        let kcO = [];
+        let result =[];
+        for(let i=0 ; i< apples.length ; i++){
+            kcA.push(a+apples[i]);
+        }
+        for (let j=0 ; j< oranges.length;j++){
+            kcO.push(b+oranges[j]);
+        }
+        for(let k=0;k<kcA.length;k++){
+            if(kcA[k]>=s && kcA[k]<=t){
+                countA++;
+            }
+        }
+        for(let l=0;l<kcO.length;l++){
+            if(kcO[l]>=s && kcO[l]<=t){
+                countO++;
+            }
+        }
+        result.push(countA,countO);
+        for (let n=0; n < result.length ; n++){
+            console.log(result[n]);
+        }
+    }
+</script>
+</body>
+</html>

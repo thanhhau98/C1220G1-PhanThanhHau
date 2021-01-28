@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    function compareTriplets(a, b) {
+        let count1=0;
+        let count2=0;
+        for(let i=0 ; i<a.length;i++){
+            if(a[i]>b[i]){
+                count1++;
+            }
+            if(b[i]>a[i]){
+                count2++;
+            }
+        }
+        let arr=[];
+        arr.push(count1,count2);
+        return arr;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4</title>
+</head>
+<body>
+<script>
+    let nhapN=parseInt(prompt('Nhập N '));
+    let sum=15;
+    let mauSo=1;
+    let tuSo;
+    for (let i=1; i<=nhapN;i++){
+            mauSo=mauSo*i;
+            tuSo=Math.pow(-1,i);
+            sum+=tuSo/mauSo;
+    }
+    alert('Giá trị của biểu thức S=15-1+1/2-1/3!+....+(-1)n  1/n! là '+sum);
+</script>
+</body>
+</html>
